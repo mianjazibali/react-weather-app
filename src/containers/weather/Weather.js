@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Search from './../../components/search';
-import {changeLocation} from './../../action/weather';
+import {changeLocation, searchForecast} from './../../action/weather';
 import WeatherCards from './../../components/weatherCards';
 import _ from 'underscore';
 
@@ -19,7 +19,7 @@ class Weather extends Component {
         return (
             <div>
                 <br /> <br />
-                <Search location={this.props.location} changeLocation={this.props.changeLocationHandler} />
+                <Search location={this.props.location} changeLocation={this.props.changeLocationHandler} searchHandler={this.props.searchForecastHandler} />
                 <WeatherCards isFetching={this.props.isFetching} forecastList={forecastList} timeZoneKey={timeZoneKey} msg={this.props.msg}/>
             </div>
         );
@@ -37,7 +37,8 @@ let mapStateToProps = state => {
 
 let mapDispatchToProps = dispatch => {
     return {
-        changeLocationHandler: event => dispatch(changeLocation(event.target.value))
+        changeLocationHandler: event => dispatch(changeLocation(event.target.value)),
+        searchForecastHandler: () => dispatch(searchForecast())
     };
 }
 

@@ -1370,6 +1370,17 @@ let weatherReducer = (state = initialState, action) => {
                 ...state,
                 location: action.payload.location
             };
+        case actionType.START_SEARCH:
+            return {
+                ...state,
+                isFetching: true
+            };
+        case actionType.UPDATE_FORECAST:
+            return {
+                ...state,
+                forecast: action.payload.forecast,
+                isFetching: false
+            };
         default:
             return state;
     }
