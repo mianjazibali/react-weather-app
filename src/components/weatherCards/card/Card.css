@@ -1,0 +1,49 @@
+@import 'https://fonts.googleapis.com/css?family=Lily+Script+One';
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Abel|Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Abel|Caveat|Gupter&display=swap');
+
+.temp {
+    font-family: 'Lily Script One';
+}
+
+.temp.main {
+    font-size: 36px;
+}
+
+.temp.min {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.temp.max {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.description {
+    font-family: 'Caveat', cursive;
+    font-size: 28px;
+}
+
+.calculated {
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.measurement {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: 'Abel', sans-serif;
+}
+
+.date {
+    font-family: 'Gupter', serif;
+}
