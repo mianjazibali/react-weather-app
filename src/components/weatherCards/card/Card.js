@@ -21,11 +21,11 @@ let card = (props) => {
             <div className="temp float-left">
               o
             </div>
-            <div className="temp min float-right mr-3">
-              {props.temp_min} &nbsp;
+            <div className="temp min float-right mr-5">
+              Min: {props.temp_min} &nbsp;
             </div>
-            <div className="temp max float-right mr-3">
-              {props.temp_max} &nbsp;
+            <div className="temp max float-right mr-5">
+              Max: {props.temp_max} &nbsp;
             </div>
           </div>
       </div> 

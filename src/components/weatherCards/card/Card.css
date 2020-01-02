@@ -15,12 +15,14 @@
     position: absolute;
     top: 0;
     right: 0;
+    font-family: 'Gupter', serif;
 }
 
 .temp.max {
     position: absolute;
     bottom: 0;
     right: 0;
+    font-family: 'Gupter', serif;
 }
 
 .description {

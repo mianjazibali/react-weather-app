@@ -26,7 +26,7 @@ let weatherCardsList = (props) => {
         let weather = _.map(distinctWeatherForecast, (data, index) => {
             let dateText = moment.unix(data.dt).format('Do MMMM');
             return (
-                <div className="col-md-2" key={index}>
+                <div className="col-md-3 ml-2" key={index}>
                     <Card
                         date={dateText}
                         temp={parseInt(data.main.temp, 10)}
