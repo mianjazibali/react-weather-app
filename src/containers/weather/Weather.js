@@ -18,6 +18,7 @@ class Weather extends Component {
         };
         return (
             <div>
+                <br /> <br />
                 <Search location={this.props.location} changeLocation={this.props.changeLocationHandler} />
                 <WeatherCards isFetching={this.props.isFetching} forecastList={forecastList} timeZoneKey={timeZoneKey} msg={this.props.msg}/>
             </div>
