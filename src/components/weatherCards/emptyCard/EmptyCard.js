@@ -12,7 +12,7 @@ let emptyCard = (props) => {
     return (
         <div className="container-fluid shadow bg-white mt-5 pt-5 pb-4">
             <div className="row">
-                <div className="col-md-12 msg">
+                <div className="col-md-12 msg date">
                     {body}
                 </div>
             </div>
