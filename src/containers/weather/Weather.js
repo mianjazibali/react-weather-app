@@ -14,7 +14,7 @@ class Weather extends Component {
         let forecastList = [];
         let forecastCity = {};
         let coord = {};
-        let sunset,sunrise;
+        let sunset,sunrise, cityDetail;
         if(!_.isEmpty(forecast)) {
             forecastList = forecast.list;
             forecastCity = forecast.city;
@@ -22,12 +22,13 @@ class Weather extends Component {
             let [cityLookup] = cityTimezones.lookupViaCity(forecastCity.name);
             sunrise = moment.unix(forecastCity.sunrise).tz(cityLookup.timezone).format('h:mm:ss a');
             sunset = moment.unix(forecastCity.sunset).tz(cityLookup.timezone).format('h:mm:ss a');
+            cityDetail = <CityDetail city={forecastCity.name} lat={coord.lat} lon={coord.lon} sunrise={sunrise} sunset={sunset} country={forecastCity.country} />;
         }
         return (
             <div>
                 <br />
                 <Search location={this.props.location} changeLocation={this.props.changeLocationHandler} searchHandler={this.props.searchForecastHandler} />
-                <CityDetail city={forecastCity.name} lat={coord.lat} lon={coord.lon} sunrise={sunrise} sunset={sunset} country={forecastCity.country} />
+                {cityDetail}
                 <WeatherCards isFetching={this.props.isFetching} forecastList={forecastList} msg={this.props.msg}/>
             </div>
         );
