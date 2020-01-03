@@ -1,8 +1,11 @@
 import React from 'react';
+import _ from 'lodash';
 import './Card.css';
 
 let card = (props) => {
   let iconUrl = `http://openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`;
+  let descriptionArray = _.map(props.weather, _.property('description'));
+  let description = descriptionArray.join();
   return (  
     <div className="container-fluid shadow bg-white pt-4 pr-5 pb-5 pl-5 mt-5">
       <div className="row date">
@@ -36,7 +39,7 @@ let card = (props) => {
       </div> 
       <div className="row description">
         <div className="col-md-12">
-          {props.weather[0].description}
+          {description}
         </div>
       </div>
       <br />
