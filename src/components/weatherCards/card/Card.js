@@ -6,7 +6,12 @@ let card = (props) => {
   return (  
     <div className="container-fluid shadow bg-white pt-4 pr-5 pb-5 pl-5 mt-5">
       <div className="row date">
-        {props.date}
+        <div className="col-md-6">
+          <span className="pull-left">{props.date}</span>
+        </div>
+        <div className="col-md-6">
+          <span className="pull-right">{props.day}</span>
+        </div>
       </div>
       <div className="row">
           <div className="col-md-6 p-0">

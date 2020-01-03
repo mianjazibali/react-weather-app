@@ -25,10 +25,12 @@ let weatherCardsList = (props) => {
         });
         let weather = _.map(distinctWeatherForecast, (data, index) => {
             let dateText = moment.unix(data.dt).format('Do MMMM');
+            let dayText = moment.unix(data.dt).format('dddd');
             return (
                 <div className="col-md-3 ml-2" key={index}>
                     <Card
                         date={dateText}
+                        day={dayText}
                         temp={parseInt(data.main.temp, 10)}
                         temp_min={parseInt(data.main.temp_min, 10)}
                         temp_max={parseInt(data.main.temp_max, 10)}
