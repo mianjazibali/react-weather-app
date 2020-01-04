@@ -5,7 +5,7 @@ let searchInput = (props) => {
     return (  
         <div className="container">
             <div className="container__item">
-                <form className="">
+                <form>
                     <input type="text"
                         className="form__field"
                         placeholder="City"
@@ -18,7 +18,6 @@ let searchInput = (props) => {
                             }
                         }} 
                     />
-                    <button type="button" className="btn btn--primary btn--inside uppercase" onClick={props.searchHandler}>Search</button>
                 </form>
             </div>
         </div>
