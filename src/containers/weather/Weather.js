@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Search from './../../components/search';
-import {changeLocation, searchForecast} from './../../action/weather';
+import {changeLocation, searchForecast, updateMsg} from './../../action/weather';
 import WeatherCards from './../../components/weatherCards';
 import CityDetail from './../../components/cityDetail/CityDetail';
 import cityTimezones from 'city-timezones';
@@ -14,15 +14,17 @@ class Weather extends Component {
         let forecastList = [];
         let forecastCity = {};
         let coord = {};
-        let sunset,sunrise, cityDetail;
+        let sunset, sunrise, cityDetail;
         if(!_.isEmpty(forecast)) {
             forecastList = forecast.list;
             forecastCity = forecast.city;
             coord = forecastCity.coord;
             let [cityLookup] = cityTimezones.lookupViaCity(forecastCity.name);
-            let cityTimeZone = forecastCity.name === 'London' ? 'Europe/London' : cityLookup.timezone;
-            sunrise = moment.unix(forecastCity.sunrise).tz(cityTimeZone).format('hh:mm a');
-            sunset = moment.unix(forecastCity.sunset).tz(cityTimeZone).format('hh:mm a');
+            if(cityLookup) {
+                let cityTimeZone = forecastCity.name === 'London' ? 'Europe/London' : cityLookup.timezone;
+                sunrise = moment.unix(forecastCity.sunrise).tz(cityTimeZone).format('hh:mm a');
+                sunset = moment.unix(forecastCity.sunset).tz(cityTimeZone).format('hh:mm a');
+            }
             cityDetail = <CityDetail city={forecastCity.name} lat={coord.lat} lon={coord.lon} sunrise={sunrise} sunset={sunset} country={forecastCity.country} />;
         }
         return (
@@ -48,7 +50,8 @@ let mapStateToProps = state => {
 let mapDispatchToProps = dispatch => {
     return {
         changeLocationHandler: event => dispatch(changeLocation(event.target.value)),
-        searchForecastHandler: () => dispatch(searchForecast())
+        searchForecastHandler: () => dispatch(searchForecast()),
+        updateMsgHandler: msg => dispatch(updateMsg(msg))
     };
 }
 

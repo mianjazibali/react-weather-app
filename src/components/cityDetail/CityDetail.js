@@ -3,6 +3,8 @@ import './CityDetail.css';
 
 let cityDetail = (props) => {
     let countryIconUrl = `https://www.countryflags.io/${props.country}/flat/24.png`
+    let sunrise = props.sunrise || '-';
+    let sunset = props.sunset || '-';
     return (
         <div className="row justify-content-center mt-5 mb-5">
             <div className="col-md-2">
@@ -41,7 +43,7 @@ let cityDetail = (props) => {
                         <img src="sunrise.svg" alt="Humidity" className="icon mt-n1" />
                     </div>
                     <div className="col-7">
-                        <span>{props.sunrise}</span>
+                        <span>{sunrise}</span>
                     </div>
                 </div>
             </div>
@@ -51,7 +53,7 @@ let cityDetail = (props) => {
                         <img src="sunset.svg" alt="Humidity" className="icon mt-n1" />
                     </div>
                     <div className="col-7">
-                        <span>{props.sunset}</span>
+                        <span>{sunset}</span>
                     </div>
                 </div>
             </div>

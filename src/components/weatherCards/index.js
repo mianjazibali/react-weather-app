@@ -26,6 +26,8 @@ let weatherCardsList = (props) => {
         let weather = _.map(distinctWeatherForecast, (data, index) => {
             let dateText = moment.unix(data.dt).format('Do MMMM');
             let dayText = moment.unix(data.dt).format('dddd');
+            let rain = data.rain ? data.rain['3h'] : '0'; 
+            let snow = data.snow ? data.snow['3h'] : '0';
             return (
                 <div className="col-md-3 ml-2" key={index}>
                     <Card
@@ -36,7 +38,8 @@ let weatherCardsList = (props) => {
                         weather={data.weather} // Array
                         cloudiness={data.clouds.all}
                         windSpeed={data.wind.speed}
-                        rain='12'
+                        rain={rain}
+                        snow={snow}
                     />
                 </div>
             );

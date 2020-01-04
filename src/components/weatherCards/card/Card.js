@@ -6,6 +6,20 @@ let card = (props) => {
   let iconUrl = `http://openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`;
   let descriptionArray = _.map(props.weather, _.property('description'));
   let description = descriptionArray.join();
+  let rain_snow;
+  if(!props.snow || props.snow !== '0') {
+    rain_snow = {
+      icon: 'snowflake.svg',
+      value: props.snow,
+      unit: ''
+    };
+  } else {
+    rain_snow = {
+      icon: 'rain.svg',
+      value: props.rain,
+      unit: 'mm'
+    };
+  }
   return (
     <div className="container-fluid shadow bg-white pt-4 pr-5 pb-5 pl-5 mb-5">
       <div className="row date">
@@ -39,7 +53,7 @@ let card = (props) => {
       <br />
       <div className="row mb-2">
         <div className="col p-0">
-          <img src="clouds.svg" alt="Humidity" className="icon float-left" />
+          <img src="clouds.svg" alt="Cloudiness" className="icon float-left" />
           <span className="float-left measurement">&nbsp; {props.cloudiness} %</span> 
         </div>
         <div className="col p-0">
@@ -49,12 +63,12 @@ let card = (props) => {
       </div>
       <div className="row">
         <div className="col p-0">
-          <img src="windy.svg" alt="Humidity" className="icon float-left" />
+          <img src="windy.svg" alt="Windspeed" className="icon float-left" />
           <span className="float-left measurement">&nbsp; {props.windSpeed} mt/s</span> 
         </div>
         <div className="col p-0">
-          <img src="rain.svg" alt="Humidity" className="icon float-left" />
-          <span className="float-left measurement">&nbsp; {props.rain} mm</span> 
+          <img src={rain_snow.icon} alt="Rain/Snow" className="icon float-left" />
+          <span className="float-left measurement">&nbsp; {rain_snow.value} {rain_snow.unit}</span> 
         </div>
       </div>
     </div>
