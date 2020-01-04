@@ -20,8 +20,9 @@ class Weather extends Component {
             forecastCity = forecast.city;
             coord = forecastCity.coord;
             let [cityLookup] = cityTimezones.lookupViaCity(forecastCity.name);
-            sunrise = moment.unix(forecastCity.sunrise).tz(cityLookup.timezone).format('h:mm:ss a');
-            sunset = moment.unix(forecastCity.sunset).tz(cityLookup.timezone).format('h:mm:ss a');
+            let cityTimeZone = forecastCity.name === 'London' ? 'Europe/London' : cityLookup.timezone;
+            sunrise = moment.unix(forecastCity.sunrise).tz(cityTimeZone).format('hh:mm:ss a');
+            sunset = moment.unix(forecastCity.sunset).tz(cityTimeZone).format('hh:mm:ss a');
             cityDetail = <CityDetail city={forecastCity.name} lat={coord.lat} lon={coord.lon} sunrise={sunrise} sunset={sunset} country={forecastCity.country} />;
         }
         return (
