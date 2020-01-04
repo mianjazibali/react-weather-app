@@ -24,20 +24,6 @@ let weatherCardsList = (props) => {
             return shouldAdd;
         });
         let weather = _.map(distinctWeatherForecast, (data, index) => {
-            let startOfDay = moment.unix(data.dt).startOf('day').unix();
-            let todayForecastArray = _.filter(props.forecastList, forecast => {
-                return moment.unix(forecast.dt).startOf('day').unix() === startOfDay;
-            });
-            let min = todayForecastArray[0].main.temp_min;
-            let max = todayForecastArray[0].main.temp_max;
-            _.forEach(todayForecastArray, forecast => {
-                if(forecast.main.temp_min < min) {
-                    min = forecast.main.temp_min;
-                }
-                if(forecast.main.temp.max > max) {
-                    max = forecast.main.temp.max;
-                }
-            });
             let dateText = moment.unix(data.dt).format('Do MMMM');
             let dayText = moment.unix(data.dt).format('dddd');
             return (
@@ -46,8 +32,6 @@ let weatherCardsList = (props) => {
                         date={dateText}
                         day={dayText}
                         temp={parseInt(data.main.temp, 10)}
-                        temp_min={parseInt(min, 10)}
-                        temp_max={parseInt(max, 10)}
                         humidity={data.main.humidity}
                         weather={data.weather} // Array
                         cloudiness={data.clouds.all}
