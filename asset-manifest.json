@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/react-weather-app/static/css/main.15e92fb5.chunk.css",
-    "main.js": "/react-weather-app/static/js/main.1f64c606.chunk.js",
-    "main.js.map": "/react-weather-app/static/js/main.1f64c606.chunk.js.map",
+    "main.css": "/react-weather-app/static/css/main.204041a6.chunk.css",
+    "main.js": "/react-weather-app/static/js/main.011c5e77.chunk.js",
+    "main.js.map": "/react-weather-app/static/js/main.011c5e77.chunk.js.map",
     "runtime-main.js": "/react-weather-app/static/js/runtime-main.98e07f87.js",
     "runtime-main.js.map": "/react-weather-app/static/js/runtime-main.98e07f87.js.map",
     "static/css/2.64a99b10.chunk.css": "/react-weather-app/static/css/2.64a99b10.chunk.css",
     "static/js/2.1aa2a539.chunk.js": "/react-weather-app/static/js/2.1aa2a539.chunk.js",
     "static/js/2.1aa2a539.chunk.js.map": "/react-weather-app/static/js/2.1aa2a539.chunk.js.map",
     "index.html": "/react-weather-app/index.html",
-    "precache-manifest.d74b7677c2873bf2bb39bb2f069bc13e.js": "/react-weather-app/precache-manifest.d74b7677c2873bf2bb39bb2f069bc13e.js",
+    "precache-manifest.f89aabd8c849c9fcd48d5a780954f676.js": "/react-weather-app/precache-manifest.f89aabd8c849c9fcd48d5a780954f676.js",
     "service-worker.js": "/react-weather-app/service-worker.js",
     "static/css/2.64a99b10.chunk.css.map": "/react-weather-app/static/css/2.64a99b10.chunk.css.map",
-    "static/css/main.15e92fb5.chunk.css.map": "/react-weather-app/static/css/main.15e92fb5.chunk.css.map",
+    "static/css/main.204041a6.chunk.css.map": "/react-weather-app/static/css/main.204041a6.chunk.css.map",
     "static/js/2.1aa2a539.chunk.js.LICENSE": "/react-weather-app/static/js/2.1aa2a539.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.98e07f87.js",
     "static/css/2.64a99b10.chunk.css",
     "static/js/2.1aa2a539.chunk.js",
-    "static/css/main.15e92fb5.chunk.css",
-    "static/js/main.1f64c606.chunk.js"
+    "static/css/main.204041a6.chunk.css",
+    "static/js/main.011c5e77.chunk.js"
   ]
 }
